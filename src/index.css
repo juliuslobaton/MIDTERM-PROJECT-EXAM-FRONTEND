@@ -1,0 +1,220 @@
+/* Modern color palette */
+:root {
+    --primary: #3a6ea5;
+    --primary-light: #c0d6e4;
+    --primary-dark: #004e89;
+    --accent: #ff6b6b;
+    --text: #333333;
+    --text-light: #ffffff;
+    --background: #f8f9fa;
+    --card-bg: #ffffff;
+    --success: #4caf50;
+    --error: #f44336;
+    --warning: #ff9800;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Segoe UI', 'Arial', sans-serif;
+  }
+  
+  body {
+    color: var(--text);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    min-height: 100vh;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  /* Common styles */
+  .centered-element {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Card styles */
+  .login-container, .student-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px var(--shadow);
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .login-container:hover, .student-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Images */
+  .login-img, .student-img {
+    display: block;
+    margin: 0 auto 20px;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .login-img:hover, .student-img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  h1::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    bottom: -8px;
+    height: 4px;
+    width: 50%;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  
+  /* Forms */
+  form {
+    margin: 20px 0;
+  }
+  
+  input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f5f7fa;
+    color: var(--text);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(58, 110, 165, 0.2);
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Buttons and links */
+  button, .back-link {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 8px 4px;
+    width: auto;
+    min-width: 150px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(58, 110, 165, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .back-link:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(58, 110, 165, 0.3);
+  }
+  
+  button:active, .back-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(58, 110, 165, 0.2);
+  }
+  
+  /* Error and response messages */
+  h4, h5 {
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  
+  h5 {
+    color: var(--error);
+    background-color: rgba(244, 67, 54, 0.1);
+  }
+  
+  h4 {
+    color: var(--success);
+    background-color: rgba(76, 175, 80, 0.1);
+  }
+  
+  /* Output container styling */
+  .student-container div {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 24px auto;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Dashboard specific styles */
+  .student-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .centered-element {
+      padding: 10px;
+    }
+    
+    button, .back-link {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+  
+  /* Animation for form elements */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  form input, form button, form .back-link {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  form input:nth-child(1) { animation-delay: 0.1s; }
+  form input:nth-child(2) { animation-delay: 0.2s; }
+  form input:nth-child(3) { animation-delay: 0.3s; }
+  form input:nth-child(4) { animation-delay: 0.4s; }
+  form button:nth-child(8) { animation-delay: 0.5s; }
+  form button:nth-child(9), form .back-link { animation-delay: 0.6s; }
